@@ -5,12 +5,6 @@ import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const AddBook = () => {
-  const { handleSubmit, control, reset } = useForm({
-    defaultValues: {
-      title: "",
-    },
-  });
-
   return (
     <>
       <AppTextForm></AppTextForm>
