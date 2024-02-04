@@ -1,5 +1,7 @@
 import { Box, Button, TextField } from "@mui/material";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import addBook from "./FireBase";
+import Book from "./Book";
 
 type FormProps = {
   title: string;
@@ -14,13 +16,13 @@ const AppTextForm: React.FC<any> = (props) => {
     control,
     formState: { errors },
   } = useForm<FormProps>({
-    mode: "onBlur", // blur イベントからバリデーションがトリガーされます。
-    criteriaMode: "all", // all -> 発生した全てのエラーが収集されます。
-    shouldFocusError: false, //true -> エラーのある最初のフィールドがフォーカスされます。
+    mode: "onBlur",
+    criteriaMode: "all",
+    shouldFocusError: false,
   });
-  // ３．Submit発火時に実行されるメソッド。ここでPOSTメソッドなどを呼ぶ
   const onSubmit: SubmitHandler<FormProps> = (data) => {
-    console.log(data);
+    const book = new Book(data.title, data.author, data.publisher);
+    addBook(book);
   };
 
   return (

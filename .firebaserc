@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "hofapp-8aaaf"
-  }
+  },
+  "targets": {
+    "hofapp-8aaaf": {
+      "hosting": {
+        "admin-site": [
+          "hof-admin"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
