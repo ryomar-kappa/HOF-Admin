@@ -5,4 +5,15 @@ class Rental {
         this.hrid = hrid;
         this.isbn = isbn;
     }
+
+  getHrid(): string {
+    return this.hrid;
+  }
+
+  getIsbn(): string{
+    return this.isbn;
+  }
+
 }
+
+export default Rental

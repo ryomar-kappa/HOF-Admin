@@ -1,8 +1,10 @@
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./FireBase";
+import Rental from "./Rental";
+
 
 const fetchRental = async (): Promise<Rental[]> => {
-  const booksCollectionRef = collection(db, "reantal");
+  const booksCollectionRef = collection(db, "rental");
   const querySnapshot = await getDocs(booksCollectionRef);
   const rentalList: Rental[] = [];
 
