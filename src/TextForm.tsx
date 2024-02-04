@@ -10,7 +10,6 @@ type FormProps = {
 };
 
 const AppTextForm: React.FC<any> = (props) => {
-  // ２，react-hook-form使用の宣言
   const {
     handleSubmit,
     control,

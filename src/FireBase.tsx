@@ -22,21 +22,6 @@ const firebaseConfig = {
 
 const app: FirebaseApp = initializeApp(firebaseConfig);
 
-async function fetchBooks(): Promise<void> {
-  const booksCollectionRef = collection(db, "books");
-  const querySnapshot = await getDocs(booksCollectionRef);
-
-  querySnapshot.docs.forEach((doc) => {
-    const data = doc.data();
-    const title: string = data.title;
-    const author: string = data.author;
-    const publisher: string = data.publisher;
-    console.log(title);
-    console.log("author", author);
-    console.log("publisher", publisher);
-  });
-}
-
 const addBook = async (book: Book) => {
   await setDoc(doc(db, "books", book.getTitle()), {
     title: book.getTitle(),
